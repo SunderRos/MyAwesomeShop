@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AwsomeShop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container" id="wrape1">
+        <nav class="navbar sticky-top navbar-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">AwsomeShop | Admin Panel | Add Product</a>
+              <div>
+                <a href="#">Home</a>
+                |
+                <a href="#">Logout</a>
+            </div>
+        </nav>
+        <form action="http://localhost:3000/createproduct" method="POST" id="form-addproduct" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label class="form-label">Product Name</label>
+              <% if(errProductName){ %>
+                <span style="color: red;">(Please input Product's Name)</span>
+              <%} %>
+              <input type="text" class="form-control" id="exampleInputProductName" aria-describedby="emailHelp" name="productName">
+              <div id="emailHelp" class="form-text">Please input your product's name</div>
+              <% if(errProductName){ %>
+                <script>
+                    document.getElementById('exampleInputProductName').className += " " + "is-invalid";
+                </script>
+              <%} %>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Detail</label>
+                <% if(errDetail){ %>
+                    <span style="color: red;">(Please input Detail)</span>
+                <%} %>
+                <input type="text" class="form-control" id="exampleInputDetail" aria-describedby="emailHelp" name="detail">
+                <div id="emailHelp" class="form-text">Write detail of your product</div>
+                <% if(errDetail){ %>
+                    <script>
+                        document.getElementById('exampleInputDetail').className += " " + "is-invalid";
+                    </script>
+                <%} %>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Price($)</label>
+                <% if(errPrice){ %>
+                    <span style="color: red;">(Please input Price)</span>
+                <%} %>
+                <input type="number" class="form-control" id="exampleInputPrice" aria-describedby="emailHelp" step="0.01" min=0 name="price">
+                <div id="emailHelp" class="form-text">Input price of your product</div>
+                <% if(errPrice){ %>
+                    <script>
+                        document.getElementById('exampleInputPrice').className += " " + "is-invalid";
+                    </script>
+                <%} %>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Category</label>
+                <% if(errCategory){ %>
+                    <span style="color: red;">(Please input Category)</span>
+                <%} %>
+                <input type="text" class="form-control" id="exampleInputCategory" aria-describedby="emailHelp" name="category">
+                <div id="emailHelp" class="form-text">Category of your product</div>
+                <% if(errCategory){ %>
+                    <script>
+                        document.getElementById('exampleInputCategory').className += " " + "is-invalid";
+                    </script>
+                <%} %>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Quantity</label>
+                <% if(errQuantity){ %>
+                    <span style="color: red;">(Please input Quantity)</span>
+                <%} %>
+                <input type="number" class="form-control" id="exampleInputQuantity" aria-describedby="emailHelp" name="quantity">
+                <div id="emailHelp" class="form-text">Quantity of your product</div>
+                <% if(errQuantity){ %>
+                    <script>
+                        document.getElementById('exampleInputQuantity').className += " " + "is-invalid";
+                    </script>
+                <%} %>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Product Picture</label>
+                <% if(errFile){ %>
+                    <span style="color: red;">(No product picture uploaded)</span>
+                <%} %>
+                <input type="file" class="form-control" id="inputGroupFile02" name="image">
+                <% if(errFile){ %>
+                    <script>
+                        document.getElementById('inputGroupFile02').className += " " + "is-invalid";
+                    </script>
+                <%} %>
+            </div>
+            <button type="submit" class="btn btn-primary" id="btn-upload">Upload</button>
+        </form>
+        <!-- <form action="upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image">
+            <button type="submit">Upload</button>
+        </form> -->
+    </div>
+</body>
+</html>

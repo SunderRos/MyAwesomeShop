@@ -1,0 +1,39 @@
+#wrape1 a{
+    color: black;
+    text-decoration: none;
+}
+#wrape1 svg{
+    margin-right: 5px;
+}
+
+#wrape2{
+    text-align: center;
+    margin-top: 12rem;
+}
+#wrapeAll12{
+    background-image: url('../picture/showcase.png');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    height: 1080px;
+    
+}
+
+#wrape3{
+    margin-top: 2rem;
+    padding: 0 2rem;
+}
+#wrape3 h5, p{
+    color: white;
+}
+#wrape3 a{
+    box-shadow: 5px 4px black;
+}
+#wrape4{
+    margin-top: 2rem;
+}
+
+#wrape4 #product .card{
+    margin-right: 20px;
+    margin-bottom: 20px;
+}

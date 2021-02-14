@@ -1,0 +1,26 @@
+body{
+    /* border: 1px solid black; */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrape1{
+    text-align: center;
+}
+#wrape1 h2{
+    font-size: 3rem;
+}
+#wrape1 p{
+    color: rgb(156, 156, 156);
+}
+#wrape{
+    border: 5px solid black;
+    padding: 5%;
+}
+#wrape3 span{
+    margin-right: 10px;
+    color: rgb(156, 156, 156);
+}

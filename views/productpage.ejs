@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AwsomeShop</title>
+    <link rel="stylesheet" href="assets/css/productpage.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+</head>
+<body>
+    <div id="wrapeAll12">
+        <div id="wrape1" class="container-fluid">
+            <nav class="navbar sticky-top navbar-light bg-light">
+                <div class="container-fluid">
+                <h2 style="font-size: 2.5rem;" class="navbar-brand" href="#">Awsome<span style="color: green;">Shop</span></h2>
+                <nav class="nav" style="align-items: center;">
+                    <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+                    </svg>Need Help</a>
+                    <%if(confirmAlert){%>
+                      <form action="http://localhost:3000/logout" method="POST">
+                          <button type="submit" class="btn btn-secondary" style="box-shadow: 5px 4px #888888;margin-right: 10px;">Logout</button>
+                      </form>
+                    <%}%>
+                    <%if(!confirmAlert){%>
+                      <form action="http://localhost:3000/signin" method="GET">
+                        <button type="submit" class="btn btn-secondary" style="box-shadow: 5px 4px #888888;margin-right: 10px;">Signin</button>
+                      </form>
+                    <%}%>
+                    <form action="http://localhost:3000/shoppingcartpage" method="GET">
+                      <button type="submit" class="btn btn-success" style="box-shadow: 5px 4px #888888; margin-right: 10px; display: flex; align-items: center;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                      </svg>Your Cart</button>
+                    </form>
+                    <img src="assets/picture/Profile-PNG-Clipart.png" alt="" style="width: 50px;">
+                    <%if(btnAlert){%>
+                      <h6 style="margin: 0;"><%=userName%></h6>
+                    <%}%>
+                      
+                </nav>
+                </div>
+            </nav>
+        </div>
+        <div class="container", id="wrape2">
+            <h1>Shop your own designer dress</h1>
+            <p style="color: grey;">Ready to wear dresses tailored for you from online. Hurry up while Stock lasts</p>
+            <br>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg></span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="wrape3">
+        <div class="row">
+            <div class="col">
+                <div class="card" style="background-color:lightcoral;">
+                    <div class="card-body">
+                      <h5 class="card-title">Coupon Saving</h5>
+                      <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <p class="card-text">Up to 60% off everyday essential</p>
+                        <img src="assets/picture/scissors.png" alt="">
+                      </div>  
+                      <a href="#" class="btn btn-light">Shop Coupons</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="background-color:coral;">
+                    <div class="card-body">
+                      <h5 class="card-title">Free Delivery</h5>
+                      <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <p class="card-text">With your selected items</p>
+                        <img src="assets/picture/checked-truck.png" alt="" style="width: 100px;">
+                      </div>  
+                      <a href="#" class="btn btn-light">Deliver Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="background-color: darkorchid;">
+                    <div class="card-body">
+                      <h5 class="card-title">Gift Voucher</h5>
+                      <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <p class="card-text">With your personal care item</p>
+                        <img src="assets/picture/gift--v1.png" alt="" style="width: 100px;">
+                      </div>  
+                      <a href="#" class="btn btn-light">Gift Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="wrape4" class="container-fluid">
+        <div class="row justify-content-evenly">
+            <div class="col-3">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-laptop" viewBox="0 0 16 16">
+                        <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z"/>
+                      </svg> Electronics</a>
+                    <a href="#" class="list-group-item list-group-item-action"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-handbag" viewBox="0 0 16 16">
+                        <path d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2zm3 4V3a3 3 0 1 0-6 0v2H3.361a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.356a2.5 2.5 0 0 0 2.472-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5H11zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 0 0 1 0V6h4z"/>
+                      </svg> Hand Bags</a>
+                    <a href="#" class="list-group-item list-group-item-action"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
+                        <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
+                      </svg> Wallet</a>
+                    <a href="#" class="list-group-item list-group-item-action"><img src="assets/picture/iconfinder_20-Clothing_and_Shirts_6330632.png" alt="" width="40" height="40"> Cloths</a>
+                </div>
+            </div>
+            <div class="col-8" id="product">
+                <div class="row justify-content-around" style="border: 5px solid black; text-align: center; padding: 20px;">
+                    <div class="col-6" style="box-shadow:5px 0px #888888;">
+                        <img src="http://localhost:3000/assets/upload/<%=id%>.png" class="img-fluid" alt="...">
+                        <div class="row justify-content-around  mini-image">
+                            <div class="col-3">
+                                <img src="http://localhost:3000/assets/upload/<%=id%>.png" class="img-fluid" alt="..."> 
+                            </div>
+                            <div class="col-3">
+                                <img src="http://localhost:3000/assets/upload/<%=id%>.png" class="img-fluid" alt="...">
+                            </div>
+                            <div class="col-3">
+                                <img src="http://localhost:3000/assets/upload/<%=id%>.png" class="img-fluid" alt="...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between col-6" style="flex-direction: column; text-align: left;">
+                        <div class="row justify-content-start">
+                            <div class="col-4">
+                                <h2><%=productName%></h2>
+                            </div>
+                            <div class="col-3">
+                                <h2><%=price%>$</h2>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <p style="color: black;"><%=detail%></p>
+                        </div>
+                        <div class="col-12">
+                            <form action="http://localhost:3000/addToCart" method="POST">
+                                <input type="text" name="productId" value="<%=id%>" style="display: none;">
+                                <input type="text" name="productName" value="<%=productName%>" style="display: none;">
+                                <input type="text" name="detail" value="<%=detail%>" style="display: none;">
+                                <input type="text" name="price" value="<%=price%>" style="display: none;">
+                                <br>
+                                <div class="row justify-content-start" style="align-items: center;">
+                                  <div class="col-4">
+                                    <button class="btn btn-primary" type="submit" onclick="confirmAddToCart(this.id)" id="<%=confirmAlert%>"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                    </svg> Cart</button>
+                                  </div>
+                                  <div class="col-3">
+                                    <input type="number" class="form-control" name="quantity" value="1", min="1">
+                                  </div>
+                                </div>
+                            </form>
+                            <br>
+                            <br>
+                            <div class="row">
+                                <div class="col-4">
+                                    <button type="button" class="btn btn-outline-secondary">Male T-Shirt</button>
+                                </div>
+                                <div class="col-4">
+                                    <button type="button" class="btn btn-outline-secondary">Single color</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <br>
+                <br>
+                <h3>Comments</h3>
+                <br>
+                <ul class="list-group" id="list-comment">
+                    <!-- <li class="list-group-item">
+                        <div class="card mb-3">
+                            <table class="table align-middle">
+                                <tbody>
+                                    <tr >
+                                        <td style="width: 20px;">
+                                            <img src="assets/picture/Profile-PNG-Clipart.png" alt="..." width="60px">
+                                        </td>
+                                        <td>
+                                            <h6>Username</h6>
+                                            <p>Date</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="card-body">
+                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="card mb-3">
+                            <table class="table align-middle">
+                                <tbody>
+                                    <tr >
+                                        <td style="width: 20px;">
+                                            <img src="assets/picture/Profile-PNG-Clipart.png" alt="..." width="60px">
+                                        </td>
+                                        <td>
+                                            <h6>Username</h6>
+                                            <p>Date</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="card-body">
+                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </li> -->
+                    <li class="list-group-item" id="form-section">
+                        <div class="mb-3">
+                            <form id="form-comment">
+                                <label for="exampleFormControlTextarea1" class="form-label">Write your review here</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comment"></textarea>
+                                <br>
+                                <div class="row justify-content-end">
+                                    <div class="col-12" style="text-align: end;">
+                                        <input type="text" name="productId" value="<%=id%>" style="display: none;" id="productId">
+                                        <button type="button" class="btn btn-success" onclick="saveUserComment()">Send</button>
+                                        <button type="button" class="btn btn-secondary">Discard</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="assets/javascript/productPage.js"></script>
+</body>
+</html>

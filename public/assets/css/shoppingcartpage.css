@@ -1,0 +1,7 @@
+#wrape1 tr img{
+    width: 100px;
+}
+
+#cart-total, #cart-total tr, #cart-total td{
+    border: 2px solid #dee2e6;
+}

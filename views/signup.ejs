@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Shop</title>
+    <link rel="stylesheet" href="assets/css/signup.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container" id="wrape">
+        <div class="container" id="wrape1">
+            <h2>Welcome to Awesome Shop</h2>
+            <p>Don't have an account? Create your own account, it takes less than a minute</p>
+        </div>
+        <br>
+        <form class="container-sm" id="wrape2" action="http://localhost:3000/register" method="POST">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Username</label>
+                <% if(errorUsername){ %>
+                    <span style="color: red;">(Please input your username!)</span>
+                <% } %>
+                <input type="text" class="form-control" id="exampleFormControlUsername" name="username">
+                <% if(errorUsername){ %>
+                    <script>
+                        document.getElementById('exampleFormControlUsername').className += " " + "is-invalid";
+                    </script>
+                <%} %>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <% if(errorEmailExist){ %>
+                    <span style="color: red;"><%= message%></span>
+                <% } %>
+                <% if(errorEmail){ %>
+                    <span style="color: red;">(Please input your email!)</span>
+                <% } %>
+                <input type="email" class="form-control" id="exampleFormControlEmail" placeholder="name@example.com" name="email">
+                <% if(errorEmail || errorEmailExist){ %>
+                    <script>
+                        document.getElementById('exampleFormControlEmail').className += " " + "is-invalid";
+                    </script>
+                <%} %>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Password</label>
+                <% if(errorPasswordCompare){ %>
+                    <span style="color: red;"><%= message%></span>
+                <% } %>
+                <% if(errorPassword){ %>
+                    <span style="color: red;">(Please input your password!)</span>
+                <% } %>
+                <% if(errorPasswordLenght){ %>
+                    <span style="color: red;">(Password must be at least 3 characters)</span>
+                <% } %>
+                <input type="password" class="form-control" id="exampleFormControlPassword" rows="3" name="password"></input>
+                <% if(errorPasswordCompare || errorPassword || errorPasswordLenght){ %>
+                    <script>
+                        document.getElementById('exampleFormControlPassword').className += " " + "is-invalid";
+                    </script>
+                <%} %>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Confirm Password</label>
+                <% if(errorConfirmPassword){ %>
+                    <span style="color: red;">(Please input your Confirm password!)</span>
+                <% } %>
+                <input type="password" class="form-control" id="exampleFormControlConfirmPassword" rows="3" name="confirmPassword"></input>
+                <% if(errorConfirmPassword){ %>
+                    <script>
+                        document.getElementById('exampleFormControlConfirmPassword').className += " " + "is-invalid";
+                    </script>
+                <%} %>
+                <% if(errorPasswordCompare){ %>
+                    <script>
+                        document.getElementById('exampleFormControlConfirmPassword').className += " " + "is-invalid";
+                    </script>
+                <%} %>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="true" id="flexCheckDefaultCheckBox" name="checkbox">
+                <label class="form-check-label" for="flexCheckDefault">
+                  I accept Terms and Condition
+                </label>
+                <% if(errorCheckbox){ %>
+                    <span style="color: red;">(You must accept the term and condition!)</span>
+                <% } %>
+                <% if(errorCheckbox){ %>
+                    <script>
+                        document.getElementById('flexCheckDefaultCheckBox').className += " " + "is-invalid";
+                    </script>
+                <%} %>
+            </div>
+            <br>
+            <br>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="submit">Sign Up</button>
+            </div>
+        </form>
+    </div>
+    <br>
+    <div id="wrape3">
+        <span>Already have an account?</span>
+        <a href="http://localhost:3000/signin"> Sign In</a>
+    </div>
+    <br>
+    <footer> 2021 &copy; AwsomeShop by Tom</footer>
+
+</body>
+</html>

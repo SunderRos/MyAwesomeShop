@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AwsomeShop</title>
+    <link rel="stylesheet" href="assets/css/shoppingcartpage.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </head>
+<body>
+    <div class="container" id="wrape1">
+        <nav class="navbar navbar-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">AwsomeShop | View Cart</a>
+              <div style="display: flex;">
+                <a href="http://localhost:3000" style="margin-right: 3px;">Home</a>
+                |
+                <form id="myformLogout" action="http://localhost:3000/logout" method="POST">
+                  <a href="javascript:;" onclick="document.getElementById('myformLogout').submit()" style="margin-left: 3px;">Logout</a>
+                </form>
+              </div>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row align-items-start">
+            <div class="col-2">
+
+            </div>
+            <div class="col-10">
+                <nav class="navbar navbar-light">
+                    <div class="container-fluid">
+                      <a class="navbar-brand">Your Cart</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row align-items-start">
+            <div class="col-2">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                      Product
+                    </a>
+                    <a href="http://localhost:3000/historypage" class="list-group-item list-group-item-action">History Purchase</a>
+                </div>
+            </div>
+            <div class="col-10">
+                <table class="table table-striped table-hover table align-middle" style="border: 1px solid black; text-align: center;">
+                  <tbody id="parent-product">
+                    <tr>
+                        <th>List</th>
+                        <th>Name</th>
+                        <th>Qty</th>
+                        <th>Detail</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+                <div class="row justify-content-end">
+                  <div class="col-6">
+                    <table class="table table align-middle" style="text-align: center; border-color: white;">
+                      <tbody>
+                        <tr>
+                            <td class="col-3"><h2>CART TOTALS</h2></td>
+                            <td class="col-4"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table class="table table-hover table align-middle table-bordered" style="text-align: center;" id="cart-total">
+                      <!-- <tbody>
+                        <tr>
+                            <td class="col-3" style="background-color: rgb(214, 211, 211);"><h5>SUBTOTAL</h5></td>
+                            <td class="col-4"><h5>100$</h5></td>
+                        </tr>
+                        <tr>
+                          <td class="col-3" style="background-color: rgb(214, 211, 211);"><h5>TOTAL</h5></td>
+                          <td class="col-4"><h5>100$</h5></td>
+                        </tr>
+                      </tbody> -->
+                    </table>
+                    <table class="table table align-middle" style="text-align: center; border-color: white;">
+                      <tbody>
+                        <tr>
+                            <td class="col-3" style="background-color: rgb(214, 211, 211); padding: 0!important;">
+                              <form action="http://localhost:3000/purchaseProduct" method="POST">
+                                <button type="submit" class="btn btn-success" style="width: 100%;" onclick="purchaseSuccess()">Buy Now</button>
+                              </form>
+                            </td>
+                            <td class="col-4"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="assets/javascript/shoppingCartPage.js"></script>
+</body>
+</html>
